@@ -21,7 +21,7 @@ case $1 in
  echo 'You added "-h" for help. '
  ;;
  -v )
- echo 'You added "-v" for varbose. '
+ echo 'You added "-v" for verbose. '
  ;;
  -d )
   case "$2" in
