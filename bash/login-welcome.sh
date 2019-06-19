@@ -8,14 +8,14 @@
 #   Use a format like this:
 #   It is HH:MM AM on weekday.
 ###############
-# Variables   #
+# Variables   
 ###############
 title="Overlord"
 hostname=$(hostname)
 date=$(date +'%I:%M %p')
 weekday=$(date +%u)
 ###############
-# Main        
+# Main
 ###############
 #cat <<EOF
 cowsay "Welcome to planet $hostname, "$title $USER!""
