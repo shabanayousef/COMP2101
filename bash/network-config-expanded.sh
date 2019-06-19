@@ -1,4 +1,5 @@
 #!/bin/#!/usr/bin/env bash
+#
 # this script displays some host identification information for a Linux machine
 #
 # Sample output:
@@ -42,9 +43,9 @@ EOF
 count=$(lshw -class network | awk '/logical name:/{print $3}' | wc -l)
 for((w=1;w<=$count;w+=1));
 do
-  interface=$(lshw -class network |
-    awk '/logical name:/{print $3}' |
-     awk -v z=$w 'NR==z{print $1; exit}')
+interface=$(lshw -class network |
+  awk '/logical name:/{print $3}' |
+  awk -v z=$w 'NR==z{print $1; exit}')
 if [[ $interface = lo* ]] ; then continue ; fi
 ipv4_address=$(ip a s $interface | awk -F '[/ ]+' '/inet /{print $3}')
 ipv4_hostname=$(getent hosts $ipv4_address | awk '{print $2}')
