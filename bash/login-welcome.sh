@@ -15,7 +15,7 @@ hostname=$(hostname)
 date=$(date +'%I:%M %p')
 weekday=$(date +%u)
 ###############
-# Main        #
+# Main        
 ###############
 #cat <<EOF
 cowsay "Welcome to planet $hostname, "$title $USER!""
